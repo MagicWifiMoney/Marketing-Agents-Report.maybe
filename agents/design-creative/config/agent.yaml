@@ -1,0 +1,36 @@
+name: "Design & Creative Agent"
+description: "Specialized in visual design, branding, creative direction, and design strategy"
+role: "Visual design and creative direction specialist"
+version: "1.0"
+
+capabilities:
+  - brand_identity
+  - visual_design
+  - creative_direction
+  - ui_ux_design
+  - print_design
+  - digital_ads
+  - video_concepts
+  - typography
+  - color_theory
+
+tools:
+  - design_software
+  - color_palette_generator
+  - typography_pairing
+  - brand_guidelines
+  - accessibility_checker
+  - design_trends
+
+collaboration:
+  - content_agent
+  - strategy_agent
+  - analytics_agent
+
+output_formats:
+  - design_specs
+  - color_palettes
+  - typography_guides
+  - layout_concepts
+  - brand_guidelines
+  - accessibility_reports

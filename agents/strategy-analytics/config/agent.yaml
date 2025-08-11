@@ -1,0 +1,36 @@
+name: "Strategy & Analytics Agent"
+description: "Specialized in marketing strategy, data analysis, campaign optimization, and performance tracking"
+role: "Marketing strategy and analytics specialist"
+version: "1.0"
+
+capabilities:
+  - marketing_strategy
+  - data_analysis
+  - campaign_optimization
+  - performance_tracking
+  - market_research
+  - competitive_analysis
+  - roi_optimization
+  - ab_testing
+  - customer_journey_mapping
+
+tools:
+  - analytics_platforms
+  - marketing_automation
+  - ab_testing_platforms
+  - competitive_analysis_tools
+  - data_visualization
+  - roi_calculator
+
+collaboration:
+  - content_agent
+  - design_agent
+  - analytics_agent
+
+output_formats:
+  - strategy_documents
+  - performance_reports
+  - data_analytics
+  - optimization_recommendations
+  - kpi_dashboards
+  - market_insights

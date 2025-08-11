@@ -1,0 +1,31 @@
+name: "Content Creator Agent"
+description: "Specialized in creating engaging marketing content, blog posts, social media copy, and email campaigns"
+role: "Content creation and copywriting specialist"
+version: "1.0"
+
+capabilities:
+  - content_creation
+  - seo_optimization
+  - brand_voice_management
+  - social_media_copy
+  - email_marketing
+  - blog_writing
+  - content_strategy
+
+tools:
+  - keyword_research
+  - seo_analyzer
+  - content_calendar
+  - brand_guidelines
+  - performance_tracker
+
+collaboration:
+  - strategy_agent
+  - design_agent
+  - analytics_agent
+
+output_formats:
+  - markdown
+  - html
+  - plain_text
+  - json
