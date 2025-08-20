@@ -1,14 +1,14 @@
 # Digital Marketing Agency Master Controller
 
-## Active Sub-Agents
-1. @seo-strategist - Technical & Local SEO
-2. @copywriter - All content creation & copywriting
-3. @conversion-strategist - CRO & Testing
-4. @research-strategist - Market & competitor analysis
-5. @analyzer - Data & reporting
-6. @idea-strategist - Campaigns & creativity
-7. @social-strategist - Social media management
-8. @design-creator - Visual design & social media graphics
+## Hybrid Agent System (Auto-Adapts to Business Type)
+1. @seo-strategist - SEO (Product focus for ecommerce, Local focus for services)
+2. @copywriter - Content (Sales copy for ecommerce, Service content for local)
+3. @conversion-strategist - Optimization (Sales conversion vs Lead generation)
+4. @research-strategist - Market analysis (Customer behavior vs Local market)
+5. @analyzer - Analytics (Revenue tracking vs Lead attribution)
+6. @idea-strategist - Campaigns (Product promotion vs Service marketing)
+7. @social-strategist - Social media (Social commerce vs Reputation management)
+8. @design-creator - Creative (Product visuals vs Professional credibility)
 
 ## How to Use Sub-Agents
 
@@ -92,6 +92,17 @@
 - Applies audience insights from @research-strategist
 - Shares social performance with @analyzer
 - Develops creative social concepts with @idea-strategist
+- Collaborates with @design-creator on visual content strategy
+
+### Design Creator (@design-creator)
+**Primary Collaborations:**
+- Creates visual content with @copywriter for brand consistency
+- Develops conversion-focused designs with @conversion-strategist
+- Uses market insights from @research-strategist for visual strategy
+- Shares design performance data with @analyzer
+- Collaborates with @idea-strategist on campaign creative concepts
+- Creates visual assets for @social-strategist across platforms
+- Optimizes visual elements based on @seo-strategist's guidance
 
 ## Workflow Templates
 
@@ -100,9 +111,10 @@
 2. **@seo-strategist** - Website audit and SEO assessment
 3. **@conversion-strategist** - Conversion funnel analysis
 4. **@copywriter** - Brand voice and messaging development
-5. **@idea-strategist** - Initial campaign concepts
-6. **@social-strategist** - Social media strategy
-7. **@analyzer** - Baseline performance measurement
+5. **@design-creator** - Visual brand identity and creative strategy
+6. **@idea-strategist** - Initial campaign concepts
+7. **@social-strategist** - Social media strategy
+8. **@analyzer** - Baseline performance measurement
 
 ### Monthly Reporting Sequence
 1. **@analyzer** - Data collection and analysis
@@ -133,35 +145,80 @@
 @analyzer [command]
 @idea-strategist [command]
 @social-strategist [command]
+@design-creator [command]
 ```
 
-### Multi-Agent Commands
+### Multi-Agent Team Commands
 ```
 @all-agents [workflow]
-@creative-team [@copywriter + @idea-strategist]
+@creative-team [@copywriter + @idea-strategist + @design-creator]
 @data-team [@analyzer + @research-strategist]
 @optimization-team [@seo-strategist + @conversion-strategist]
+@content-team [@copywriter + @seo-strategist + @social-strategist]
+@strategy-team [@research-strategist + @idea-strategist + @analyzer]
 ```
 
-### Workflow Commands
+### Universal Commands (Auto-Adapting to Business Type)
 ```
-"Start new client onboarding for [client-name]"
-"Generate monthly report for [client-name]"
-"Launch campaign for [client-name]"
-"Optimize website for [client-name]"
-"Create content strategy for [client-name]"
+@all-agents growth analysis for [client-name] --type=[ecommerce|local-service]
+@all-agents performance audit for [client-name] --type=[ecommerce|local-service]
+@all-agents quick wins for [client-name] --type=[ecommerce|local-service]
+@all-agents optimization review for [client-name] --type=[ecommerce|local-service]
 ```
 
-## Client Data Structure
-Each client folder contains:
-- Business information and goals
-- Current marketing performance
-- Brand guidelines and voice
-- Target audience profiles
-- Competitor analysis
-- Performance benchmarks
-- Campaign history
-- Optimization recommendations
+### Business-Specific Commands
+```
+# Ecommerce-Focused (1-2 Days)
+@all-agents revenue optimization for [store-name]
+@all-agents conversion audit for [store-name]
+@all-agents traffic analysis for [store-name]
+@all-agents product performance for [store-name]
+
+# Local Service-Focused (1-2 Days)
+@all-agents lead generation audit for [business-name]
+@all-agents local presence review for [business-name]
+@all-agents reputation analysis for [business-name]
+@all-agents referral optimization for [business-name]
+```
+
+### Channel-Specific Commands (Same Day)
+```
+@all-agents SEO analysis for [client-name] --type=[ecommerce|local-service]
+@all-agents social media review for [client-name] --type=[ecommerce|local-service]
+@all-agents content audit for [client-name] --type=[ecommerce|local-service]
+@all-agents analytics review for [client-name] --type=[ecommerce|local-service]
+```
+
+### Dashboard Commands (Same Day)
+```
+@all-agents dashboard for [client-name] --type=[ecommerce|local-service]
+@all-agents quick check for [client-name]
+@all-agents performance snapshot for [client-name]
+```
+
+## Client Data Structure (Auto-Adapts by Business Type)
+
+### Ecommerce Clients
+Each ecommerce folder contains:
+- Store information and revenue goals
+- Product catalog and performance data
+- Customer demographics and buying behavior
+- Marketing channel performance (SEO, ads, email, social)
+- Brand guidelines and creative assets
+- Competitor analysis and market positioning
+- Conversion funnel and sales optimization history
+- Growth opportunities and scaling recommendations
+
+### Local Service Clients  
+Each service business folder contains:
+- Business information and lead generation goals
+- Service offerings and performance data
+- Local market demographics and service area analysis
+- Marketing channel performance (local SEO, reputation, referrals)
+- Brand guidelines and professional credibility assets
+- Local competitor analysis and market positioning
+- Lead generation funnel and conversion history
+- Growth opportunities and market expansion recommendations
 
 ## Success Metrics by Agent
 
@@ -206,6 +263,12 @@ Each client folder contains:
 - Follower growth and retention
 - Social media reach and impressions
 - Social media conversion rates
+
+### @design-creator
+- Brand recognition and consistency scores
+- Visual asset performance and engagement
+- Creative ROI and conversion impact
+- Design system effectiveness and adoption
 
 ---
 
