@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailhead Cycling - Marketing Audit Report</title>
+    <link rel="stylesheet" href="agency-brand.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Additional template-specific styles */
+        .page-break { page-break-before: always; }
+        .no-break { page-break-inside: avoid; }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- Report Header -->
+        <header class="report-header">
+            <div>
+                <h1 class="report-title">Trailhead Cycling</h1>
+                <p class="report-subtitle">Local Business Audit Report • August 20, 2025</p>
+            </div>
+            <div class="agency-logo-placeholder" style="width: 120px; height: 60px; background: linear-gradient(135deg, #2563eb, #3b82f6); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                YOUR AGENCY
+            </div>
+        </header>
+
+        <!-- Business Information -->
+        <div class="business-info no-break">
+            <h2 class="business-name">Trailhead Cycling</h2>
+            <div class="business-details">
+                <div class="detail-item">
+                    <span class="detail-label">Business Type:</span>
+                    <span class="detail-value">Multi-Location Bike Shop (Sales, Service, Accessories)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Location:</span>
+                    <span class="detail-value">Champlin & Plymouth, Minnesota</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Website:</span>
+                    <span class="detail-value">https://www.trailheadcycling.com/</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Report Period:</span>
+                    <span class="detail-value">Current Month</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <section class="executive-summary no-break">
+            <h2 style="margin: 0 0 20px 0; color: #2563eb; font-size: 20px;">Executive Summary</h2>
+            
+            <div class="health-score">
+                <span class="health-score-value">🟢 STRONG - Optimization Opportunities</span>
+                <span class="health-score-label">Business Health Score</span>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h3 style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px;">Key Findings</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    {{#KEY_FINDINGS}}
+                    <li style="margin: 8px 0; padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>{{FINDING_TITLE}}:</strong> {{FINDING_DESCRIPTION}}
+                    </li>
+                    {{/KEY_FINDINGS}}
+                </ul>
+            </div>
+
+            <div class="opportunities">
+                
+                <div class="opportunity-box opportunity-medium">
+                    <h4 class="opportunity-title">1. **Multi-Location SEO</h4>
+                    <p class="opportunity-description">** Optimize both Champlin & Plymouth GMB listings separately</p>
+                </div>
+                <div class="opportunity-box opportunity-medium">
+                    <h4 class="opportunity-title">2. **E-bike Market Leadership</h4>
+                    <p class="opportunity-description">** Capitalize on growing e-bike demand and expertise</p>
+                </div>
+                <div class="opportunity-box opportunity-medium">
+                    <h4 class="opportunity-title">3. **Winter Premium Services</h4>
+                    <p class="opportunity-description">** Indoor trainer setups, e-bike battery service, bike storage</p>
+                </div>
+                <div class="opportunity-box opportunity-medium">
+                    <h4 class="opportunity-title">4. **Women's Cycling Market</h4>
+                    <p class="opportunity-description">** Leverage Liv Certified Retailer status for targeted marketing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Dashboard -->
+        <section class="section no-break">
+            <div class="section-header">
+                <span class="section-icon">📊</span>
+                Performance Scorecard
+            </div>
+            
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Current</th>
+                        <th>Previous</th>
+                        <th>Change</th>
+                        <th>Target</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#KEY_METRICS}}
+                    <tr>
+                        <td><strong>{{METRIC_NAME}}</strong></td>
+                        <td>{{CURRENT_VALUE}}</td>
+                        <td>{{PREVIOUS_VALUE}}</td>
+                        <td class="{{CHANGE_CLASS}}">{{CHANGE_VALUE}}</td>
+                        <td>{{TARGET_VALUE}}</td>
+                        <td><span class="status-{{STATUS_CLASS}} status-icon">{{STATUS_ICON}}</span>{{STATUS_TEXT}}</td>
+                    </tr>
+                    {{/KEY_METRICS}}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SEO Analysis -->
+        <section class="section page-break">
+            <div class="section-header">
+                <span class="section-icon">🔍</span>
+                SEO & Local Search Analysis
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Keyword Opportunities</h3>
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Competition</th>
+                            <th>Search Volume</th>
+                            <th>Opportunity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#SEO_KEYWORDS}}
+                        <tr>
+                            <td>{{KEYWORD}}</td>
+                            <td>{{COMPETITION}}</td>
+                            <td>{{SEARCH_VOLUME}}</td>
+                            <td><span class="status-{{OPPORTUNITY_CLASS}}">{{OPPORTUNITY}}</span></td>
+                        </tr>
+                        {{/SEO_KEYWORDS}}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Immediate SEO Actions</h3>
+                <div class="action-items">
+                    {{#SEO_ACTIONS}}
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">{{ACTION_TEXT}}</div>
+                        <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                    </div>
+                    {{/SEO_ACTIONS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Generation / Conversion Analysis -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                Lead Generation & Conversion
+            </div>
+            
+            <div class="chart-container">
+                <h4 class="chart-title">Lead Source Performance</h4>
+                <canvas id="leadSourceChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Optimization Opportunities</h3>
+                <div class="action-items">
+                    
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Online repair scheduling system</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">"Winter bike storage" service booking</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Email signup for "Spring bike prep checklist"</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">"Free bike safety check" lead magnet</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Live chat for repair questions</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Indoor trainer sales and setup services</div>
+                        <div class="action-impact">New capability</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Bike storage and maintenance packages</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">"Spring tune-up" pre-booking with discount</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Winter cycling gear and clothing sales</div>
+                        <div class="action-impact">Improvement</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">Bike fitting services for trainer setups</div>
+                        <div class="action-impact">New capability</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget & ROI Projections -->
+        <section class="section page-break">
+            <div class="section-header">
+                <span class="section-icon">💰</span>
+                Investment & ROI Projections
+            </div>
+            
+            <div class="budget-breakdown">
+                {{#BUDGET_CHANNELS}}
+                <div class="budget-item">
+                    <div class="budget-channel">{{CHANNEL_NAME}}</div>
+                    <div class="budget-amount">${{BUDGET_AMOUNT}}</div>
+                    <div class="budget-roi">{{ROI_PROJECTION}} ROI</div>
+                </div>
+                {{/BUDGET_CHANNELS}}
+            </div>
+
+            <div class="chart-container">
+                <h4 class="chart-title">Expected Results Timeline</h4>
+                <canvas id="roiChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- Action Plan Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📅</span>
+                Implementation Timeline
+            </div>
+            
+            <div class="timeline">
+                {{#TIMELINE_ITEMS}}
+                <div class="timeline-item">
+                    <div class="timeline-date">{{DATE_RANGE}}</div>
+                    <div class="timeline-content">
+                        <strong>{{PHASE_NAME}}</strong><br>
+                        {{PHASE_DESCRIPTION}}
+                    </div>
+                </div>
+                {{/TIMELINE_ITEMS}}
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🚀</span>
+                Next Steps & Priority Actions
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3 style="color: #10b981; margin-bottom: 15px;">Quick Wins (0-30 days)</h3>
+                    <div class="action-items">
+                        {{#QUICK_WINS}}
+                        <div class="action-item">
+                            <div class="action-checkbox"></div>
+                            <div class="action-text">{{ACTION_TEXT}}</div>
+                            <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                        </div>
+                        {{/QUICK_WINS}}
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #f59e0b; margin-bottom: 15px;">Strategic Initiatives (30-90 days)</h3>
+                    <div class="action-items">
+                        {{#STRATEGIC_ACTIONS}}
+                        <div class="action-item">
+                            <div class="action-checkbox"></div>
+                            <div class="action-text">{{ACTION_TEXT}}</div>
+                            <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                        </div>
+                        {{/STRATEGIC_ACTIONS}}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Footer -->
+        <footer class="report-footer">
+            <div class="footer-branding">
+                Report Generated by Your Marketing Agency Marketing Intelligence System
+            </div>
+            <div style="margin-top: 10px;">
+                Next Review: September 19, 2025 • Emergency Review Triggers: Performance drops >20%, reputation issues, technical problems
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chart Generation Scripts -->
+    <script>
+        // Lead Source Chart
+        const leadCtx = document.getElementById('leadSourceChart').getContext('2d');
+        new Chart(leadCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Google Search", "Referrals", "Social Media", "Direct", "Other"],
+                datasets: [{
+                    data: [40, 25, 15, 12, 8],
+                    backgroundColor: [
+                        '#2563eb', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        // ROI Timeline Chart
+        const roiCtx = document.getElementById('roiChart').getContext('2d');
+        new Chart(roiCtx, {
+            type: 'line',
+            data: {
+                labels: ["Month 1", "Month 2", "Month 3", "Month 6", "Month 12"],
+                datasets: [{
+                    label: 'Projected Revenue',
+                    data: [5000, 12000, 18000, 35000, 60000],
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BUSINESS_NAME}} - Marketing Audit Report</title>
+    <link rel="stylesheet" href="agency-brand.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Additional template-specific styles */
+        .page-break { page-break-before: always; }
+        .no-break { page-break-inside: avoid; }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- Report Header -->
+        <header class="report-header">
+            <div>
+                <h1 class="report-title">{{BUSINESS_NAME}}</h1>
+                <p class="report-subtitle">{{REPORT_TYPE}} Report • {{REPORT_DATE}}</p>
+            </div>
+            <div class="agency-logo-placeholder" style="width: 120px; height: 60px; background: linear-gradient(135deg, #2563eb, #3b82f6); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                YOUR AGENCY
+            </div>
+        </header>
+
+        <!-- Business Information -->
+        <div class="business-info no-break">
+            <h2 class="business-name">{{BUSINESS_NAME}}</h2>
+            <div class="business-details">
+                <div class="detail-item">
+                    <span class="detail-label">Business Type:</span>
+                    <span class="detail-value">{{BUSINESS_TYPE}}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Location:</span>
+                    <span class="detail-value">{{LOCATION}}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Website:</span>
+                    <span class="detail-value">{{WEBSITE}}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Report Period:</span>
+                    <span class="detail-value">{{REPORT_PERIOD}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <section class="executive-summary no-break">
+            <h2 style="margin: 0 0 20px 0; color: #2563eb; font-size: 20px;">Executive Summary</h2>
+            
+            <div class="health-score">
+                <span class="health-score-value">{{HEALTH_SCORE}}</span>
+                <span class="health-score-label">Business Health Score</span>
+            </div>
+
+            <div style="margin: 20px 0;">
+                <h3 style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px;">Key Findings</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    {{#KEY_FINDINGS}}
+                    <li style="margin: 8px 0; padding: 8px 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>{{FINDING_TITLE}}:</strong> {{FINDING_DESCRIPTION}}
+                    </li>
+                    {{/KEY_FINDINGS}}
+                </ul>
+            </div>
+
+            <div class="opportunities">
+                {{#IMMEDIATE_OPPORTUNITIES}}
+                <div class="opportunity-box opportunity-{{PRIORITY}}">
+                    <h4 class="opportunity-title">{{TITLE}}</h4>
+                    <p class="opportunity-description">{{DESCRIPTION}}</p>
+                </div>
+                {{/IMMEDIATE_OPPORTUNITIES}}
+            </div>
+        </section>
+
+        <!-- Key Metrics Dashboard -->
+        <section class="section no-break">
+            <div class="section-header">
+                <span class="section-icon">📊</span>
+                Performance Scorecard
+            </div>
+            
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Current</th>
+                        <th>Previous</th>
+                        <th>Change</th>
+                        <th>Target</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#KEY_METRICS}}
+                    <tr>
+                        <td><strong>{{METRIC_NAME}}</strong></td>
+                        <td>{{CURRENT_VALUE}}</td>
+                        <td>{{PREVIOUS_VALUE}}</td>
+                        <td class="{{CHANGE_CLASS}}">{{CHANGE_VALUE}}</td>
+                        <td>{{TARGET_VALUE}}</td>
+                        <td><span class="status-{{STATUS_CLASS}} status-icon">{{STATUS_ICON}}</span>{{STATUS_TEXT}}</td>
+                    </tr>
+                    {{/KEY_METRICS}}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SEO Analysis -->
+        <section class="section page-break">
+            <div class="section-header">
+                <span class="section-icon">🔍</span>
+                SEO & Local Search Analysis
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Keyword Opportunities</h3>
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Competition</th>
+                            <th>Search Volume</th>
+                            <th>Opportunity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#SEO_KEYWORDS}}
+                        <tr>
+                            <td>{{KEYWORD}}</td>
+                            <td>{{COMPETITION}}</td>
+                            <td>{{SEARCH_VOLUME}}</td>
+                            <td><span class="status-{{OPPORTUNITY_CLASS}}">{{OPPORTUNITY}}</span></td>
+                        </tr>
+                        {{/SEO_KEYWORDS}}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Immediate SEO Actions</h3>
+                <div class="action-items">
+                    {{#SEO_ACTIONS}}
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">{{ACTION_TEXT}}</div>
+                        <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                    </div>
+                    {{/SEO_ACTIONS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Generation / Conversion Analysis -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🎯</span>
+                {{CONVERSION_TITLE}}
+            </div>
+            
+            <div class="chart-container">
+                <h4 class="chart-title">Lead Source Performance</h4>
+                <canvas id="leadSourceChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subsection-title">Optimization Opportunities</h3>
+                <div class="action-items">
+                    {{#CONVERSION_ACTIONS}}
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div class="action-text">{{ACTION_TEXT}}</div>
+                        <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                    </div>
+                    {{/CONVERSION_ACTIONS}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget & ROI Projections -->
+        <section class="section page-break">
+            <div class="section-header">
+                <span class="section-icon">💰</span>
+                Investment & ROI Projections
+            </div>
+            
+            <div class="budget-breakdown">
+                {{#BUDGET_CHANNELS}}
+                <div class="budget-item">
+                    <div class="budget-channel">{{CHANNEL_NAME}}</div>
+                    <div class="budget-amount">${{BUDGET_AMOUNT}}</div>
+                    <div class="budget-roi">{{ROI_PROJECTION}} ROI</div>
+                </div>
+                {{/BUDGET_CHANNELS}}
+            </div>
+
+            <div class="chart-container">
+                <h4 class="chart-title">Expected Results Timeline</h4>
+                <canvas id="roiChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <!-- Action Plan Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📅</span>
+                Implementation Timeline
+            </div>
+            
+            <div class="timeline">
+                {{#TIMELINE_ITEMS}}
+                <div class="timeline-item">
+                    <div class="timeline-date">{{DATE_RANGE}}</div>
+                    <div class="timeline-content">
+                        <strong>{{PHASE_NAME}}</strong><br>
+                        {{PHASE_DESCRIPTION}}
+                    </div>
+                </div>
+                {{/TIMELINE_ITEMS}}
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🚀</span>
+                Next Steps & Priority Actions
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3 style="color: #10b981; margin-bottom: 15px;">Quick Wins (0-30 days)</h3>
+                    <div class="action-items">
+                        {{#QUICK_WINS}}
+                        <div class="action-item">
+                            <div class="action-checkbox"></div>
+                            <div class="action-text">{{ACTION_TEXT}}</div>
+                            <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                        </div>
+                        {{/QUICK_WINS}}
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: #f59e0b; margin-bottom: 15px;">Strategic Initiatives (30-90 days)</h3>
+                    <div class="action-items">
+                        {{#STRATEGIC_ACTIONS}}
+                        <div class="action-item">
+                            <div class="action-checkbox"></div>
+                            <div class="action-text">{{ACTION_TEXT}}</div>
+                            <div class="action-impact">{{EXPECTED_IMPACT}}</div>
+                        </div>
+                        {{/STRATEGIC_ACTIONS}}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Footer -->
+        <footer class="report-footer">
+            <div class="footer-branding">
+                Report Generated by {{AGENCY_NAME}} Marketing Intelligence System
+            </div>
+            <div style="margin-top: 10px;">
+                Next Review: {{NEXT_REVIEW_DATE}} • Emergency Review Triggers: {{EMERGENCY_TRIGGERS}}
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chart Generation Scripts -->
+    <script>
+        // Lead Source Chart
+        const leadCtx = document.getElementById('leadSourceChart').getContext('2d');
+        new Chart(leadCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [{{LEAD_SOURCE_LABELS}}],
+                datasets: [{
+                    data: [{{LEAD_SOURCE_DATA}}],
+                    backgroundColor: [
+                        '#2563eb', '#f59e0b', '#10b981', '#ef4444', '#8b5cf6'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        // ROI Timeline Chart
+        const roiCtx = document.getElementById('roiChart').getContext('2d');
+        new Chart(roiCtx, {
+            type: 'line',
+            data: {
+                labels: [{{ROI_TIMELINE_LABELS}}],
+                datasets: [{
+                    label: 'Projected Revenue',
+                    data: [{{ROI_TIMELINE_DATA}}],
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
