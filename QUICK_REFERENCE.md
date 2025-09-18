@@ -48,6 +48,14 @@ git checkout -b backup-[date]
 ## 🔄 **Workflow Triggers**
 
 ```bash
+# Potential client research (Interactive)
+"Research [website/company-name]"
+
+# Quick research options
+"Research [website] --quick"
+"Research [website] --competitive"
+"Research [website] --growth"
+
 # New client onboarding
 "Start new client onboarding for [Client Name]"
 

@@ -9,6 +9,7 @@ import os
 import tempfile
 import sys
 from pathlib import Path
+import json
 
 # Add our generator to path
 parent_dir = Path(__file__).parent.parent
@@ -22,6 +23,15 @@ spec = importlib.util.spec_from_file_location("report_generator", parent_dir / "
 report_generator_module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(report_generator_module)
 ReportGenerator = report_generator_module.ReportGenerator
+
+# Import Notion helper if available
+try:
+    sys.path.append(str(parent_dir.parent / "notion-integration"))
+    from notion_helper import NotionHelper
+    NOTION_AVAILABLE = True
+except ImportError:
+    NOTION_AVAILABLE = False
+    print("Notion integration not available. Install notion-integration requirements.")
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
@@ -72,6 +82,14 @@ UPLOAD_TEMPLATE = '''
                 <input type="radio" name="template" value="default" checked> Full Report<br>
                 <input type="radio" name="template" value="executive"> Executive Summary<br>
                 <input type="radio" name="template" value="presentation"> Presentation
+            </div>
+        </div>
+        
+        <div class="options">
+            <div class="option-group">
+                <label><strong>Sync to Notion:</strong></label><br>
+                <input type="checkbox" name="sync_notion" value="true"> Save to Notion Database<br>
+                <small style="color: #666;">Automatically sync report data, action items, and insights</small>
             </div>
         </div>
 
@@ -161,6 +179,7 @@ def generate_report():
         # Get form options
         output_format = request.form.get('format', 'html')
         template = request.form.get('template', 'default')
+        sync_notion = request.form.get('sync_notion') == 'true'
         
         # Save uploaded file temporarily
         with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False, encoding='utf-8') as temp_md:
@@ -192,6 +211,20 @@ def generate_report():
             )
             
             print(f"Generated file: {generated_file}")
+            
+            # Sync to Notion if requested and available
+            notion_sync_result = None
+            if sync_notion and NOTION_AVAILABLE:
+                try:
+                    notion_helper = NotionHelper()
+                    notion_sync_result = notion_helper.sync_report_data(data_dict)
+                    print(f"✅ Synced to Notion: {notion_sync_result}")
+                except Exception as e:
+                    print(f"⚠️ Notion sync failed: {e}")
+                    notion_sync_result = {"error": str(e)}
+            elif sync_notion and not NOTION_AVAILABLE:
+                print("⚠️ Notion sync requested but not available")
+                notion_sync_result = {"error": "Notion integration not configured"}
             
             # Send file for download
             return send_file(

@@ -19,6 +19,7 @@
 - `@all-agents new client onboarding for [client]`
 
 ### Workflow Triggers:
+- "Research [website/company-name]" → Interactive potential client analysis
 - "Start new client onboarding" → Activates full sequence
 - "Monthly reporting for all clients" → Generates all reports
 - "Campaign ideation for [client]" → Creative brainstorming
@@ -156,6 +157,18 @@
 @optimization-team [@seo-strategist + @conversion-strategist]
 @content-team [@copywriter + @seo-strategist + @social-strategist]
 @strategy-team [@research-strategist + @idea-strategist + @analyzer]
+```
+
+### Research Commands (Potential Clients)
+```
+Research [website/company-name] → Interactive agent selection and analysis
+Research [website] --quick → 3-agent essential analysis
+Research [website] --competitive → Competitive analysis focus
+Research [website] --growth → Growth opportunity focus
+Research [website] --technical → Technical and performance focus
+Research [website] --ecommerce → E-commerce optimized analysis
+Research [website] --local → Local business optimized analysis
+Research [website] --saas → B2B SaaS focused research
 ```
 
 ### Universal Commands (Auto-Adapting to Business Type)
