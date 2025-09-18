@@ -1,0 +1,56 @@
+# Marketing Agency Script Hub Integration
+# Additional requirements for marketing functionality
+
+# AI/LLM Integration
+anthropic>=0.25.0          # Claude API integration
+openai>=1.30.0             # OpenAI API integration (backup)
+
+# Report Generation (from existing system)
+Flask==2.3.3               # Web interface for reports
+Werkzeug==2.3.7            # Flask dependency
+requests>=2.31.0           # HTTP requests for API calls
+python-dotenv>=1.0.0       # Environment variable management
+
+# Notion Integration (from existing system)
+notion-client>=2.2.1       # Notion API integration
+
+# Data Processing & Analysis
+pandas>=1.5.0              # Data manipulation (already in Script Hub)
+numpy                      # Numerical computations (already in Script Hub)
+
+# Web Scraping & Research
+beautifulsoup4             # HTML parsing (already in Script Hub)
+selenium>=4.15.0           # Web automation for research
+webdriver-manager>=4.0.0   # Chrome driver management
+
+# SEO & Marketing Tools
+advertools>=0.14.0         # SEO and SEM analysis tools
+google-api-python-client>=2.100.0  # Google APIs (Analytics, Search Console)
+google-auth-oauthlib>=1.0.0        # Google OAuth
+google-auth-httplib2>=0.2.0        # Google Auth HTTP
+
+# Social Media APIs
+tweepy>=4.14.0             # Twitter API
+facebook-sdk>=3.1.0        # Facebook Graph API
+instagrapi>=1.19.0         # Instagram API
+
+# Content & Text Processing
+nltk>=3.8                  # Natural language processing
+textstat>=0.7.3            # Readability analysis
+wordcloud>=1.9.2           # Word cloud generation
+
+# Email Marketing
+sendgrid>=6.10.0           # Email sending service
+mailchimp-marketing>=3.0.80  # Mailchimp API
+
+# Analytics & Tracking
+google-analytics-reporting-api-v4>=1.0.0  # GA4 reporting
+
+# Utilities
+pillow                     # Image processing (already in Script Hub)
+openpyxl>=3.1.0           # Excel file handling
+python-dateutil>=2.8.0    # Date parsing and manipulation
+
+# Development & Testing
+pytest>=7.4.0             # Testing framework
+python-decouple>=3.8       # Settings management

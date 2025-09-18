@@ -1,0 +1,57 @@
+# Render deployment configuration for Marketing Agency Script Hub
+# Auto-deployment configuration for the integrated marketing platform
+
+services:
+  - type: web
+    name: marketing-agency-script-hub
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run script_hub.py --server.port=$PORT --server.address=0.0.0.0
+    envVars:
+      # AI API Configuration
+      - key: ANTHROPIC_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: OPENAI_API_KEY
+        sync: false  # Set manually in Render dashboard
+
+      # Notion Integration (Optional)
+      - key: NOTION_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: NOTION_DATABASE_ID_CLIENTS
+        sync: false  # Set manually in Render dashboard
+      - key: NOTION_DATABASE_ID_REPORTS
+        sync: false  # Set manually in Render dashboard
+
+      # Script Hub Configuration
+      - key: SCRIPT_DIRECTORY
+        value: python_scripts
+
+      # Google APIs (Optional)
+      - key: GOOGLE_ANALYTICS_CREDENTIALS
+        sync: false  # Set manually in Render dashboard
+      - key: GOOGLE_SEARCH_CONSOLE_CREDENTIALS
+        sync: false  # Set manually in Render dashboard
+
+      # Email Services (Optional)
+      - key: SENDGRID_API_KEY
+        sync: false  # Set manually in Render dashboard
+
+      # Social Media APIs (Optional)
+      - key: TWITTER_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: FACEBOOK_ACCESS_TOKEN
+        sync: false  # Set manually in Render dashboard
+
+      # Application Settings
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
+
+# Database (Optional - for advanced features)
+databases:
+  - name: marketing-agency-db
+    plan: starter
+    region: oregon
